@@ -45,7 +45,6 @@ HISTSIZE=1099999
 
 
 plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab node colored-man-pages )
-# plugins=(zsh-autosuggestions git  )
 
 
 # FZF configuration
@@ -144,15 +143,30 @@ sed 's/$/ --force/' |
 sed '\$!s/$/ \&\&/' > install-extensions.sh"
 
 
-acs() {
+docker-service(){
+sudo systemctl $1 containerd.service
+sudo systemctl $1 docker.socket
+sudo systemctl $1 docker.service
+}
+
+
+acs()
+{
     apt-cache search $1
 }
 
-cl() {
-    tree -L 1
+cl()
+{
+    if [ $# -eq 0 ]
+    then
+        tree -L 1
+    else
+    tree -L $1 | less
+    fi
 }
 
-kk(){
+kk()
+{
   if [ $# -eq 0 ]
   then
     htop
@@ -167,10 +181,11 @@ vif()
     nvim $(fzf)
 }
 
-
-cd_with_fzf() {
+cd_with_fzf() 
+{
     cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" && echo "$PWD" && tree -L 1 --dirsfirst
 }
+
 clip()
 {
   cat $1 | xclip -selection c
