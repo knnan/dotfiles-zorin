@@ -11,6 +11,8 @@ UseCustomCursorColor=true
 LocalTabTitleFormat=%d : %n
 Name=Neen Green
 Parent=FALLBACK/
+TerminalCenter=true
+TerminalMargin=14
 
 [Terminal Features]
 BlinkingCursorEnabled=true

@@ -8,10 +8,10 @@ CustomCursorColor=255,255,255
 UseCustomCursorColor=true
 
 [General]
-Name=ocean
+Name=Material-Ocean
 Parent=FALLBACK/
+TerminalCenter=true
 TerminalMargin=14
-
 
 [Terminal Features]
 BlinkingCursorEnabled=true
