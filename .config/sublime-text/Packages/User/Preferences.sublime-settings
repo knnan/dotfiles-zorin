@@ -39,7 +39,7 @@
 		".vscode"
 	],
 	"font_face": "Iosevka",
-	"font_size": 10,
+	"font_size": 12,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,

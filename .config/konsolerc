@@ -1,0 +1,29 @@
+[Desktop Entry]
+DefaultProfile=Material-Ocean.profile
+
+[DownloadDialog Settings]
+Height 1080=502
+Height 900=502
+Width 1600=700
+Width 1920=700
+
+[Favorite Profiles]
+Favorites=Neen Green.profile,Nee Green Light.profile,solarized light.profile,Material-Ocean.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 1080=1015
+Height 900=616
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA48AAAJoAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1600=911
+Width 1920=1920
+Window-Maximized 1080x1920=true
+Window-Maximized 900x1600=true
+
+[TabBar]
+NewTabButton=true
+TabBarVisibility=AlwaysHideTabBar
