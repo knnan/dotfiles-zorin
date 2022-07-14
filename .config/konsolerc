@@ -8,20 +8,20 @@ Width 1600=700
 Width 1920=700
 
 [Favorite Profiles]
-Favorites=Nee Green Light.profile,Neen Green.profile,Material-Ocean.profile,solarized light.profile
+Favorites=Material-Ocean.profile,Neen Green.profile,solarized light.profile,Nee Green Light.profile
 
 [KonsoleWindow]
 ShowMenuBarByDefault=false
 
 [MainWindow]
 Height 1080=616
-Height 900=616
+Height 900=531
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAA48AAAJoAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAAAx0AAAITAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1600=911
+Width 1600=797
 Width 1920=911
 
 [TabBar]
-NewTabButton=true
-TabBarVisibility=AlwaysHideTabBar
+TabBarUseUserStyleSheet=true
+TabBarUserStyleSheetFile=file:///home/knnan/.local/share/konsole/konsole-tabstyle.css

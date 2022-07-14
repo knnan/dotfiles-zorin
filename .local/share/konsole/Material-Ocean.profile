@@ -8,6 +8,7 @@ CustomCursorColor=255,255,255
 UseCustomCursorColor=true
 
 [General]
+LocalTabTitleFormat=%d : %n
 Name=Material-Ocean
 Parent=FALLBACK/
 TerminalCenter=true
