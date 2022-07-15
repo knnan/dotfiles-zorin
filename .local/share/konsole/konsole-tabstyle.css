@@ -4,17 +4,19 @@ QTabWidget::pane > QWidget {
 
 QTabWidget::tab-bar {
   background-color: #090a10;
+  padding:5px;
 }
 
 QTabBar::tab {
+  padding:5px;
   background-color: #090a10;
   font-family: Iosevka;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 QTabBar::tab:selected,
 QTabBar::tab:hover {
   color: #70ce8e;
   font-family: Iosevka;
-  font-size: 15px;
+  font-size: 13px;
 }
