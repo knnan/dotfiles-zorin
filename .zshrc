@@ -117,7 +117,10 @@ load-nvmrc
 
 alias zshconfig="vi ~/.zshrc"
 alias sshconfig="vi ~/.ssh/config"
+alias sshconfig-work="vi ~/.ssh/conf.d/config.work"
+alias sshconfig-pers="vi ~/.ssh/conf.d/config.personal"
 alias viconfig="vi ~/.config/nvim/init.vim"
+alias batconfig="vi ~/.config/bat/config"
 alias reload="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lst="tree -L 1"
@@ -130,6 +133,7 @@ alias lss=batcat
 alias vpn_connect="sudo openvpn --cd ~/vpn --config client.ovpn  --auth-user-pass auth.txt"
 alias usa_vpn_connect="sudo openvpn --cd ~/vpn/usa_dc_vpn --config usa_dc_ssl_vpn_config.ovpn  --auth-user-pass usa_dc_auth.txt"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias sys-update="sudo apt update -y && sudo apt upgrade -y"
 
 
 if type nvim > /dev/null 1>&1; then
@@ -153,6 +157,10 @@ sudo systemctl $1 docker.service
 acs()
 {
     apt-cache search $1
+}
+
+install-pkg (){
+    sudo apt install "$@"
 }
 
 cl()
