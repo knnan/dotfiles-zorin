@@ -1,9 +1,9 @@
-programs 
+programs
 zsh
 oh my zsh
 zsh plugins 
-	fzf-tab
-	zsh-autosuggestions
+	* fzf-tab
+	* zsh-autosuggestions
 nvm
 git 
 curl
@@ -18,8 +18,9 @@ vscode
 powerline fonts
 spaceship theme
 batcat
-rg
+ripgrep
 ranger
+rename
 fdfind
 xclip
 vlc

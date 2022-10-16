@@ -12,7 +12,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export SPICETIFY_INSTALL="$HOME/spicetify-cli"
 
 export PATH="$SPICETIFY_INSTALL:$PATH"
-PATH=/bin:/usr/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.ssh:$HOME/.cargo/bin:/usr/local/go/bin:${PATH}
+# set up Go lang path #
+export GOPATH=$HOME/go
+PATH=/bin:/usr/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.ssh:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/go/bin:${PATH}
 export PATH
 
 # ZSH_THEME="robbyrussell"
@@ -43,8 +45,36 @@ SAVEHIST=999999
 HISTSIZE=1099999
 
 
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab node colored-man-pages )
+# spaceship theme configuration
+SPACESHIP_DIR_COLOR="green"
+
+
+export UPDATE_ZSH_DAYS=10
+
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+export HISTORY_IGNORE="google*"
+
+
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_BEEP
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt histignorealldups
+setopt HIST_SAVE_NO_DUPS
+SAVEHIST=999999
+HISTSIZE=1099999
+
+
+
+plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab node colored-man-pages docker-compose )
 
 
 # FZF configuration
@@ -129,7 +159,7 @@ alias xclip="xclip -selection c"
 alias -g G=" | rg"
 alias bat=batcat
 alias lss=batcat
-
+alias dc="docker compose"
 alias vpn_connect="sudo openvpn --cd ~/vpn --config client.ovpn  --auth-user-pass auth.txt"
 alias usa_vpn_connect="sudo openvpn --cd ~/vpn/usa_dc_vpn --config usa_dc_ssl_vpn_config.ovpn  --auth-user-pass usa_dc_auth.txt"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
