@@ -1,0 +1,7 @@
+# spaceship theme configuration
+SPACESHIP_PROMPT_ASYNC=false
+SPACESHIP_DIR_COLOR="green"
+SPACESHIP_DIR_TRUNC_REPO=true
+SPACESHIP_USER_SHOW=true
+
+

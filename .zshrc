@@ -45,36 +45,7 @@ SAVEHIST=999999
 HISTSIZE=1099999
 
 
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
-
-# spaceship theme configuration
-SPACESHIP_DIR_COLOR="green"
-
-
-export UPDATE_ZSH_DAYS=10
-
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-export HISTORY_IGNORE="google*"
-
-
-setopt EXTENDED_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_BEEP
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt histignorealldups
-setopt HIST_SAVE_NO_DUPS
-SAVEHIST=999999
-HISTSIZE=1099999
-
-
-
-plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab node colored-man-pages docker-compose )
+plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab autoupdate node colored-man-pages docker-compose )
 
 
 # FZF configuration
@@ -104,12 +75,12 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+  fdfind --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+  fdfind --type d --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
 }
 
 FZF_CTRL_T_COMMAND='fdfind --hidden --follow --exclude ".git" --exclude "node_modules" .'
@@ -151,6 +122,7 @@ alias sshconfig-work="vi ~/.ssh/conf.d/config.work"
 alias sshconfig-pers="vi ~/.ssh/conf.d/config.personal"
 alias viconfig="vi ~/.config/nvim/init.vim"
 alias batconfig="vi ~/.config/bat/config"
+alias cat='bat --paging=never --style=plain'
 alias reload="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lst="tree -L 1"
@@ -184,7 +156,7 @@ sudo systemctl $1 docker.service
 }
 
 
-acs()
+search-pkg()
 {
     apt-cache search $1
 }
@@ -192,8 +164,12 @@ acs()
 install-pkg (){
     sudo apt install "$@"
 }
+remove-pkg (){
+    sudo apt remove --purge "$@"
+    sudo apt autoclean -y && sudo apt autoremove -y
+}
 
-cl()
+tl()
 {
     if [ $# -eq 0 ]
     then
