@@ -122,15 +122,14 @@ alias sshconfig-work="vi ~/.ssh/conf.d/config.work"
 alias sshconfig-pers="vi ~/.ssh/conf.d/config.personal"
 alias viconfig="vi ~/.config/nvim/init.vim"
 alias batconfig="vi ~/.config/bat/config"
-alias cat='bat --paging=never --style=plain'
+alias cat='bat'
 alias reload="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lst="tree -L 1"
 alias python=python3
 alias xclip="xclip -selection c"
 alias -g G=" | rg"
-alias bat=batcat
-alias lss=batcat
+#alias bat=batcat # when installed from ubuntu source package the binary is named as batcat
 alias dc="docker compose"
 alias vpn_connect="sudo openvpn --cd ~/vpn --config client.ovpn  --auth-user-pass auth.txt"
 alias usa_vpn_connect="sudo openvpn --cd ~/vpn/usa_dc_vpn --config usa_dc_ssl_vpn_config.ovpn  --auth-user-pass usa_dc_auth.txt"
@@ -149,28 +148,25 @@ sed 's/$/ --force/' |
 sed '\$!s/$/ \&\&/' > install-extensions.sh"
 
 
-docker-service(){
+docker-service() {
 sudo systemctl $1 containerd.service
 sudo systemctl $1 docker.socket
 sudo systemctl $1 docker.service
 }
 
 
-search-pkg()
-{
+search-pkg() {
     apt-cache search $1
 }
-
-install-pkg (){
+install-pkg() {
     sudo apt install "$@"
 }
-remove-pkg (){
+remove-pkg() {
     sudo apt remove --purge "$@"
     sudo apt autoclean -y && sudo apt autoremove -y
 }
 
-tl()
-{
+tl() {
     if [ $# -eq 0 ]
     then
         tree -L 1
@@ -179,8 +175,7 @@ tl()
     fi
 }
 
-kk()
-{
+kk() {
   if [ $# -eq 0 ]
   then
     htop
@@ -190,31 +185,26 @@ kk()
 }
 
 
-vif()
-{
+vif() {
     nvim $(fzf)
 }
 
-cd_with_fzf()
-{
+cd_with_fzf() {
     cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" && echo "$PWD" && tree -L 1 --dirsfirst
 }
 
-clip()
-{
+clip() {
   cat $1 | xclip -selection c
 }
 
-dotfiles_add()
-{
+dotfiles_add() {
   config status
   config add -u
   config commit -m $1
   config push
 }
 
-help()
-{
+help() {
   if [ $# -eq 0 ]
   then
     curl cheat.sh
