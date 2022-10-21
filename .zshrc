@@ -18,10 +18,9 @@ PATH=/bin:/usr/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.ssh:$HOME/.cargo/bin:$
 export PATH
 
 # ZSH_THEME="robbyrussell"
+# ZSH_THEME="common"
 ZSH_THEME="spaceship"
 
-# spaceship theme configuration
-SPACESHIP_DIR_COLOR="green"
 
 
 export UPDATE_ZSH_DAYS=10
@@ -43,7 +42,6 @@ setopt histignorealldups
 setopt HIST_SAVE_NO_DUPS
 SAVEHIST=999999
 HISTSIZE=1099999
-
 
 plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search copybuffer git fzf fzf-tab autoupdate node colored-man-pages docker-compose )
 
@@ -111,12 +109,13 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 
 
 alias zshconfig="vi ~/.zshrc"
+alias spaceconfig="vi ~/.config/spaceship.zsh"
 alias sshconfig="vi ~/.ssh/config"
 alias sshconfig-work="vi ~/.ssh/conf.d/config.work"
 alias sshconfig-pers="vi ~/.ssh/conf.d/config.personal"
