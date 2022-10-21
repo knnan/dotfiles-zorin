@@ -1,0 +1,158 @@
+# steps to setup zorin os 16 post installation
+
+
+# update and upgrade the system
+
+sudo apt update -y 	; 
+sudo apt upgrade -y ;
+
+# INSTALL PACKAGES
+
+# install kazam for screen recording
+
+sudo apt install kazam
+
+# install common packages
+
+sudo apt install -y git curl wget net-tools build-essential python3 python3-pip
+
+# install ubuntu restricted extras
+ 
+ sudo add-apt-repository universe;
+ sudo add-apt-repository multiverse;
+ sudo apt-get install -y ubuntu-restricted-extras;
+ 
+# clone dotfiles repo
+
+git clone https://github.com/knnan/dotfiles-zorin.git ~/Downloads/dotfiles
+cd ~/Downloads/dotfiles
+
+# install deb-get
+
+curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+
+# install zsh and related packages for terminals
+
+sudo apt install -y zsh;
+sudo apt install powerline fonts-powerline
+
+ #make sure to check for new version of the command at the following url
+#https://github.com/ohmyzsh/ohmyzsh
+   
+   
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install cmd line tools (fzf,bat,ripgrep,fdfind)
+
+sudo apt install fzf ripgrep fd-find
+
+# install deb only packages using deb-get
+
+google-chrome-stable,  sublime-text, sublime-merge, typora, bitwarden, code, git-delta, neovim, obsidian
+
+deb-get install google-chrome-stable
+deb-get install sublime-text
+deb-get install sublime-merge
+deb-get install code
+deb-get install sublime-text
+deb-get install git-delta
+deb-get install neovim
+deb-get install typora
+deb-get install obsidian
+
+
+
+
+
+
+# install gnome tools
+
+sudo apt install gnome-tweaks
+sudo apt isntall gnome-shell-extensions
+sudo apt install chrome-gnome-shell
+
+
+# install gnome extensions
+
+clipboard-indicator@tudmotu.com
+Vitals@CoreCoding.com
+CoverflowAltTab@palatis.blogspot.com
+color-picker@tuberry
+wintile
+caffeine
+
+# install other packages
+
+
+* bat
+    deb-get install bat
+* bitwarden
+    deb-get install bitwarden
+* bleachbit
+* containerd.io
+* dbeaver-ce
+* dconf-editor
+    sudo apt install dconf-editor
+* deb-get
+* delta
+    deb-get install git-delta
+* docker-ce-cli
+* docker-ce
+* docker-compose-plugin
+* fd-find
+    sudo apt install fd-find
+* filelight
+* filezilla
+* fzf
+    sudo apt install fzf
+* git-delta
+    deb-get install delta
+* git
+    sudo apt install git
+* google-chrome-stable
+    deb-get install google-chrome-stable
+* gparted
+* grsync
+* iperf3
+    sudo apt install iperf3
+* konsole
+* ksysguard
+* ktorrent
+* nemo
+* neofetch
+    sudo apt install neofetch
+* neovim
+    deb-get install neovim
+* net-tools
+    sudo apt install net-tools
+* nfs-common
+    sudo apt insta;;
+* picard
+* ranger
+    sudo apt install ranger
+* ripgrep
+    sudo apt install ripgrep
+* shotwell
+* slack-desktop
+* speedcrunch
+* spotify-client
+* stacer
+* sublime-merge
+    deb-get install sublime-merge
+* sublime-text
+    deb-get install sublime-text
+* traceroute
+    sudo apt install traceroute
+* tree
+    sudo apt install tree
+* typora
+    deb-get install typora
+* vlc
+    sudo apt install vlc
+* wireshark
+    sudo apt install wireshark
+* wmctrl
+* xclip
+* xdotool
+* xz-utils
+* zsh
